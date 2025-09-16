@@ -34,7 +34,6 @@ const navigation = [
   { name: 'AI History', href: '/ai-history', icon: History },
   { name: 'AI Testground', href: '/ai-testground', icon: FlaskConical },
   { name: 'Search', href: '/search', icon: Search },
-  { name: 'Analytics', href: '/analytics', icon: BarChart3 },
 ];
 
 const secondaryNavigation = [

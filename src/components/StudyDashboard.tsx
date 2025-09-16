@@ -17,9 +17,11 @@ import {
   Star,
   Calendar as CalendarIcon,
   Plus,
-  ChevronRight
+  ChevronRight,
+  Play,
+  Pause
 } from 'lucide-react';
-import { SessionControls } from '@/components/analytics/SessionControls';
+
 
 interface DashboardStats {
   totalNotes: number;
@@ -57,6 +59,43 @@ export function StudyDashboard() {
   const [recentActivities, setRecentActivities] = useState<RecentActivity[]>([]);
   const [upcomingTasks, setUpcomingTasks] = useState<UpcomingTask[]>([]);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [isStudyActive, setIsStudyActive] = useState(false);
+
+  // Simple session controls component
+  const SimpleSessionControls = () => (
+    <Card>
+      <CardContent className="p-4">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Clock className="h-4 w-4 text-muted-foreground" />
+            <span className="font-medium">Study Session</span>
+          </div>
+          <Button 
+            onClick={() => setIsStudyActive(!isStudyActive)}
+            variant={isStudyActive ? "destructive" : "default"}
+            size="sm"
+          >
+            {isStudyActive ? (
+              <>
+                <Pause className="h-4 w-4 mr-2" />
+                End Session
+              </>
+            ) : (
+              <>
+                <Play className="h-4 w-4 mr-2" />
+                Start Session
+              </>
+            )}
+          </Button>
+        </div>
+        {isStudyActive && (
+          <div className="mt-2 text-sm text-muted-foreground">
+            Session active - Focus on your studies!
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
 
   useEffect(() => {
     // Load dashboard data
@@ -159,8 +198,8 @@ export function StudyDashboard() {
 
   return (
     <div className="space-y-6">
-      {/* Session Controls */}
-      <SessionControls />
+      {/* Simple Session Controls */}
+      <SimpleSessionControls />
 
       {/* Stats Overview */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -19,7 +19,6 @@ import OCR from "./pages/OCR";
 import AIChat from "./pages/AIChat";
 import Learn from "./pages/Learn";
 import SearchPage from "./pages/SearchPage";
-import Analytics from "./pages/Analytics";
 import AIHistory from "./pages/AIHistory";
 import AITestground from "./pages/AITestground";
 import Profile from "./pages/Profile";
@@ -55,7 +54,6 @@ const App = () => (
                 <Route path="chat" element={<AIChat />} />
                 <Route path="learn" element={<Learn />} />
                 <Route path="search" element={<SearchPage />} />
-                <Route path="analytics" element={<Analytics />} />
                 <Route path="ai-history" element={<AIHistory />} />
                 <Route path="ai-testground" element={<AITestground />} />
                 <Route path="profile" element={<Profile />} />

@@ -24,8 +24,8 @@ const Features = () => {
     {
       icon: TrendingUp,
       image: progressIcon,
-      title: "Progress Tracking",
-      description: "Monitor your learning progress with detailed analytics, performance insights, and personalized improvement suggestions.",
+      title: "AI Analytics",
+      description: "Track your AI interactions, quiz performance, and enhancement history with intelligent insights to optimize your learning.",
       gradient: "from-academic-blue to-success-green",
     },
   ];
