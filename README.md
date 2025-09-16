@@ -1,73 +1,123 @@
-# Welcome to your Lovable project
+# StudyVault AI Nexus
 
-## Project info
+**StudyVault AI Nexus** is an AI-powered study platform with smart notes, file management, and intelligent planning tools. Built with modern web technologies to help students and professionals organize, enhance, and optimize their learning experience.
 
-**URL**: https://lovable.dev/projects/0343891b-1e91-457b-b30c-6b448835ccd1
+## Features
 
-## How can I edit this code?
+- 🤖 **AI-Enhanced Learning**: Concept learning, quiz generation, and content analysis
+- 📝 **Smart Notes**: Rich text editor with AI-powered enhancements
+- 📁 **File Management**: Upload, organize, and process documents with OCR
+- 📊 **Analytics Dashboard**: Track study sessions and productivity
+- 🎯 **Study Planning**: Intelligent study plan generation and management
+- 🔍 **Advanced Search**: Find content across notes and files instantly
+- 📱 **Progressive Web App**: Works offline with full mobile support
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript, Vite
+- **Styling**: Tailwind CSS, shadcn/ui components
+- **Backend**: Supabase (Database, Auth, Edge Functions)
+- **AI Integration**: OpenAI, Google Gemini, Anthropic Claude
+- **Additional**: React Query, React Router, Recharts
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0343891b-1e91-457b-b30c-6b448835ccd1) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+ and npm
+- Supabase account (for backend services)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd studyvault-ai-nexus
+```
 
-Follow these steps:
+2. Install dependencies:
+```bash
+npm install
+```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+3. Set up environment variables:
+```bash
+cp .env.example .env
+```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+4. Configure your Supabase project settings in `.env`
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+5. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will be available at `http://localhost:8080`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Development
 
-**Use GitHub Codespaces**
+### Available Scripts
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run build:dev` - Build in development mode
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
 
-## What technologies are used for this project?
+### Project Structure
 
-This project is built with:
+```
+src/
+├── components/         # Reusable UI components
+├── features/          # Feature-specific components and logic
+├── hooks/             # Custom React hooks
+├── pages/             # Route components
+├── services/          # API and business logic
+├── utils/             # Utility functions
+└── types/             # TypeScript definitions
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Deployment
 
-## How can I deploy this project?
+### Build for Production
 
-Simply open [Lovable](https://lovable.dev/projects/0343891b-1e91-457b-b30c-6b448835ccd1) and click on Share -> Publish.
+```bash
+npm run build
+```
 
-## Can I connect a custom domain to my Lovable project?
+### Deploy to Vercel
 
-Yes, you can!
+1. Connect your repository to Vercel
+2. Set environment variables in Vercel dashboard
+3. Deploy automatically on push to main branch
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Deploy to Other Platforms
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+The built files in `dist/` can be deployed to any static hosting service.
+
+## Configuration
+
+### AI Services
+
+Configure AI providers in your environment:
+- OpenAI: Set `OPENAI_API_KEY`
+- Google Gemini: Set `GEMINI_API_KEY`
+- Anthropic: Set `ANTHROPIC_API_KEY`
+
+### Supabase Setup
+
+1. Create a new Supabase project
+2. Run the migrations in `supabase/migrations/`
+3. Deploy the Edge Functions in `supabase/functions/`
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Test thoroughly
+5. Submit a pull request
+
+## License
+
+This project is licensed under the MIT License.
